@@ -1,0 +1,21 @@
+{
+  "name": "still_alive",
+  "version": "1.0.0",
+  "description": "Simple Slowloris in NodeJS",
+  "main": "still_alive.js",
+  "scripts": {
+    "start":"node still_alive",
+    "server": "node test_server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/x222b/still_alive.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/x222b/still_alive/issues"
+  },
+  "homepage": "https://github.com/x222b/still_alive#readme"
+}
