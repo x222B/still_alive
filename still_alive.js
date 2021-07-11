@@ -21,6 +21,7 @@ function createSocket(){
     let rand=Math.floor(Math.random()*100);
     let sentPackages=0;
 
+    // Writes random data to keep socket alive
     function stillAlive(){
         sentPackages++;
         socket.write('Socket[' + rand + ']:Package['+ (sentPackages * rand) + ']', ()=>{
@@ -31,6 +32,7 @@ function createSocket(){
         });
     }
 
+    // Initial GET request and write to socket
     socket.on('connect',()=>{
         socket.write(options.method + ' ' + options.path +' HTTP/1.1\n', 'ascii', ()=>{
             console.log('New socket created. Active sockets: ['+ aliveSockets + ']');
