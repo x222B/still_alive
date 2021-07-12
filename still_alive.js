@@ -5,9 +5,9 @@ const options = {
     port: 8080,
     path: '/',
     method: 'GET',
-    maxSockets: 20,
+    maxSockets: 200,
     respawn: true,
-    rate:10000
+    rate:1000
 }
 
 let aliveSockets=0;
