@@ -5,9 +5,9 @@ const options = {
     port: 8080,
     path: '/',
     method: 'GET',
-    maxSockets: 200,
+    maxSockets: 20,
     respawn: true,
-    rate:500
+    rate:10000
 }
 
 let aliveSockets=0;
@@ -24,11 +24,10 @@ function createSocket(){
     // Writes random data to keep socket alive
     function stillAlive(){
         sentPackages++;
-        socket.write('Socket[' + rand + ']:Package['+ (sentPackages * rand) + ']', ()=>{
+        socket.write('Socket[' + rand + ']:Package['+ (sentPackages * rand) + ']\n', ()=>{
             setTimeout(()=>{
-                stillAlive!==false ? stillAlive() : null,
-                options.rate
-            })
+                stillAlive !==false ? stillAlive() : null
+            },options.rate)
         });
     }
 
