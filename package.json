@@ -5,7 +5,7 @@
   "main": "still_alive.js",
   "scripts": {
     "start":"node still_alive",
-    "server": "node test_server"
+    "test_server": "node test_server"
   },
   "repository": {
     "type": "git",
