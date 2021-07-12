@@ -3,12 +3,10 @@ var net = require('net');
 let activeSockets=[];
 let receivedPackets=0;
 
-console.log('')
-
 var server = net.Server((socket)=>{
     activeSockets.push(socket);
 
-    socket.on('data',(data)=>{
+    socket.on('data',()=>{
         receivedPackets++;
         console.log('Active Sockets: ',activeSockets.length);
         console.log('Received Packets ['+ receivedPackets +']');
